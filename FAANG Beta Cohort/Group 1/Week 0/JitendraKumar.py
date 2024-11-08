@@ -19,12 +19,11 @@ class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         if not strs:
             return ""
-        min_str = min(strs,key=len)
-        for i,c in enumerate(min_str):
+        for i,c in enumerate(strs[0]):
             for s in strs:
-                if s[i] != c:
-                    return min_str[:i]
-        return min_str
+                if i >= len(s) or s[i] != c:
+                    return strs[0][:i]
+        return strs[0]
 
     # Time complexity O(sum of all characters in all strings)
     # Space complexity O(1)
