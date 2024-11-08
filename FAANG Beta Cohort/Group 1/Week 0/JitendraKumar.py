@@ -13,6 +13,9 @@ class Solution:
             for j in range(n // 2):
                 matrix[i][n - j - 1], matrix[i][j] = matrix[i][j], matrix[i][n - j - 1]
 
+    # Time complexity O(number of cells)
+    # Space complexity O(1)
+
     def longestCommonPrefix(self, strs: List[str]) -> str:
         if not strs:
             return ""
@@ -22,3 +25,6 @@ class Solution:
                 if s[i] != c:
                     return min_str[:i]
         return min_str
+
+    # Time complexity O(sum of all characters in all strings)
+    # Space complexity O(1)
