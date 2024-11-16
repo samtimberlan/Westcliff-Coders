@@ -1,4 +1,4 @@
-Week 2, Topic: Stack and Queue
+Week 2, Topic: Stacks and Queues
 
 After solving, don't forget to upload your solutions here
 
