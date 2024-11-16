@@ -18,6 +18,8 @@ class Solution:
             even = even.next
         odd.next = evenHead
         return head
+# Time Complexity : O(n)
+# Space Complexity : O(1)
 
 Linked List Cycle: https://leetcode.com/problems/linked-list-cycle-ii/description/
 # Definition for singly-linked list.
@@ -37,3 +39,5 @@ class Solution:
                 visited.add(node)
                 node = node.next
         return None
+# Time Complexity : O(n)
+# Space Complexity : O(n)
