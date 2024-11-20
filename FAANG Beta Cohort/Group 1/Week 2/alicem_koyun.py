@@ -19,7 +19,7 @@ class MinStack:
             min_val = value
             
         # Append the value and the updated minimum to the stack
-        self.stack.append([value, current_min])
+        self.stack.append([value, min_val])
     
     def pop(self) -> None:
         # Pop the top element of the stack, which removes both the value and the associated minimium
