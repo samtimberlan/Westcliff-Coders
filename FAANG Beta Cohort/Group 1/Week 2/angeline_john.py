@@ -3,29 +3,32 @@
 """
 
 # 155. Min Stack leet code problem
-class MinStack:
-    stk = []
-
+class MinStack():
     # constructor
     def __init__(self):
-        self.data = []    
+        self.stack = []
+        self.minStack = []
+    
 
-    
-    # function to push element into the stack
+    # function to push an element to the stack
     def push(self, val: int) -> None:
-        MinStack.stk.append(val)
-        
-    
-    # function to remove the top element in the stack
+        self.stack.append(val)
+        minVal = min(val, self.minStack[-1] if self.minStack else val)
+        self.minStack.append(minVal)
+
+
+    # function to remove the element on top of the stack
     def pop(self) -> None:
-        MinStack.stk.pop()
+        self.stack.pop()
+        self.minStack.pop()
         
     
-    # function to retrieve the top element in the stack
+    # function to get the top element of the stack
     def top(self) -> int:
-        return MinStack.stk[-1]
-        
+        return self.stack[-1]
     
-    # function to return the minimum element in the stack
+
+
+    # function to retrieve the minimum element in the stack
     def getMin(self) -> int:
-        return min(MinStack.stk)
+        return self.minStack[-1]
