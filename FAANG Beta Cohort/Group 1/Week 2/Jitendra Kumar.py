@@ -23,6 +23,9 @@ class MinStack:
         return self.stack[-1][1]
 
 
+Time Complexity : O(1) for all operations
+Space Complexity : O(n)
+    
 # Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
 # obj.push(x)
