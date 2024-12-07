@@ -7,3 +7,16 @@ How to use this repo:
 3. Locate the appropriate week
 4. View the question
 5. Submit your answer in the format - `yourname.py`
+
+Steps to aproaching interview Questions:
+Clarify
+1. Give approach
+2. Talk time complexity
+3. Give another approach
+4. Talk time complexity
+5. Ask which approach should be coded
+6. Talk about input validation and testcases
+7. Add a testcase
+8. Talk about tradeoffs and rationale for using data structures
+9. Explain code when writing
+10. Dry run
