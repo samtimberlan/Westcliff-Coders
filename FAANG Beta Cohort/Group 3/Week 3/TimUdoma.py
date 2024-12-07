@@ -68,4 +68,31 @@ class Solution:
 
         return count
 
-        
+# Question 2
+from collections import defaultdict
+
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        def build_adjacency_list(edges):
+            graph = defaultdict(list)
+            for sub in edges:
+                graph[sub[1]].append(sub[0])
+                graph[sub[0]].append(sub[1])
+            return graph
+            
+        def dfs(graph, curr, destination, visited):
+            if curr == destination:
+                return True
+            
+            visited.add(curr)
+            
+            for neighbor in graph[curr]:
+                if neighbor not in visited:
+                    if dfs(graph, neighbor, destination, visited):
+                        return True
+            
+            return False
+            
+        graph = build_adjacency_list(edges)
+        visited = set()
+        return dfs(graph, source, destination, visited)
