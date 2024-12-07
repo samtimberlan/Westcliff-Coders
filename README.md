@@ -9,7 +9,7 @@ How to use this repo:
 5. Submit your answer in the format - `yourname.py`
 
 Steps to aproaching interview Questions:
-Clarify
+**Clarify**
 1. Give approach
 2. Talk time complexity
 3. Give another approach
