@@ -18,8 +18,8 @@ class Solution:
         self.dfs(grid, i-1, j)
         self.dfs(grid, i, j+1)
         self.dfs(grid, i, j-1)
-    # Time complexity O(number of cells)
-    # Space complexity O(number of cells) worst case
+# Time complexity O(number of cells)
+# Space complexity O(number of cells) worst case
   
     def num_islands(grid):
       if not grid or not grid[0]:
@@ -43,5 +43,28 @@ class Solution:
                   grid[r][c] = '0'
                   bfs(r, c)
       return island_count
-      # Time complexity O(number of cells)
-      # Space complexity O(number of cells) worst case
+# Time complexity O(number of cells)
+# Space complexity O(number of cells) worst case
+
+#Course Schedule II https://leetcode.com/problems/course-schedule-ii/description/
+from collections import defaultdict
+class Solution:
+    def findOrder(self, numCourses, prerequisites):
+        indegree = [set() for _ in range(numCourses)]
+        outdegree = [[] for _ in range(numCourses)]
+        for p in prerequisites:
+            indegree[p[0]].add(p[1])
+            outdegree[p[1]].append(p[0])
+        ret, start = [], [i for i in range(numCourses) if not indegree[i]]
+        while start:
+            newStart = [] 
+            for i in start:
+                ret.append(i)
+                for j in outdegree[i]:
+                    indegree[j].remove(i)
+                    if not indegree[j]:
+                        newStart.append(j)
+            start = newStart
+        return ret if len(ret) == numCourses else []
+# Time complexity O(number of courses + number of prerequisite pairs)
+# Space complexity O(number of courses^2)
