@@ -20,3 +20,5 @@ Steps to aproaching interview Questions:
 8. Talk about tradeoffs and rationale for using data structures
 9. Explain code when writing
 10. Dry run
+
+[Cracking the coding interview link](https://drive.google.com/file/d/1NNTDXye_SygAtS68-abCR4tyyxIZq81_/view?usp=sharing)
