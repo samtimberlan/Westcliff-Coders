@@ -3,7 +3,7 @@
 How to use this repo:
 
 1. Clone the repo
-2. Find your group
+2. Find your cohort
 3. Locate the appropriate week
 4. View the question
 5. Submit your answer in the format - `yourname.py`
