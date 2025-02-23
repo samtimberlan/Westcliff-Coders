@@ -39,7 +39,7 @@ print(queue.pop())   # Output: 1
 print(queue.empty()) # Output: False
 
 # Time Complexity : Amortized O(1) for all operations.
-# Space Complexity : Two stacks (stack_in and stack_out) store at most n elements.
+# Space Complexity : Two stacks (stackIn and stackOut) store at most n elements.
 
 #Validate Stack Sequences: https://leetcode.com/problems/validate-stack-sequences/
 class Solution:
