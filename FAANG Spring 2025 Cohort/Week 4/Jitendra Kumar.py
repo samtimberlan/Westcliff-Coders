@@ -115,6 +115,8 @@ printTree(inverted_root_iterative)
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+#Recursive approach
 class Solution:
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
         # Base case: if the list is empty, return None
@@ -144,6 +146,35 @@ class Solution:
 
 # Time Complexity : O(n) because each element is pushed and popped at most once, resulting in a total time complexity of O(n).
 # Space Complexity : O(n) since the auxiliary stack holds at most O(n) elements, with no extra data structures apart from integer counters.
+
+#Iterative Approach
+class Solution:
+    def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
+        if not head:
+            return None
+        # Convert Linked List to Array
+        nodes = []
+        while head:
+            nodes.append(head.val)
+            head = head.next
+        # Iterative construction of BST using BFS
+        queue = deque()
+        root = TreeNode(0)  # Temporary root
+        queue.append((root, 0, len(nodes) - 1))  # (TreeNode, left_index, right_index)
+        while queue:
+            node, left, right = queue.popleft()
+            mid = (left + right) // 2
+            node.val = nodes[mid]
+            # If left subtree exists, create a left child and enqueue it
+            if left <= mid - 1:
+                node.left = TreeNode(0)
+                queue.append((node.left, left, mid - 1))
+            # If right subtree exists, create a right child and enqueue it
+            if mid + 1 <= right:
+                node.right = TreeNode(0)
+                queue.append((node.right, mid + 1, right))
+        return root
+
 
 # Helper: Build a linked list from a Python list.
 def buildLinkedList(values):
