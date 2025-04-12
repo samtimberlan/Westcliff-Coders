@@ -37,4 +37,4 @@ class Solution:
         return depth
 
 # Time Complexity : O(n) because each node is visited once.
-# Space Complexity : O(w) in worst case and O(1) to O(log n) in the best case.
+# Space Complexity : O(w) : O(n) in worst case and O(1) to O(log n) in the best case.
