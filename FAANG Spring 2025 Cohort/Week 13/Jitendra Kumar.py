@@ -11,7 +11,7 @@ class ParkingSystem:
         return False
 
 # Time Complexity : O(1) Need to iterate in loop over all elements.
-# Space Complexity : O(1) : Need to allocate space for all the n elements
+# Space Complexity : O(1) : Need to allocate space only for 3 elements of the list
 
 
 #LRU Cache : https://leetcode.com/problems/lru-cache/description
